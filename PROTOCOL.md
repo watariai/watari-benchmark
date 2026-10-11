@@ -1517,3 +1517,40 @@ timing only, made before any v6 case has been run and before any v6 result exist
 changes: the system under test is still production as deployed on the run date, identified by the
 commit SHA recorded in `results.v6.json`; the sample, ground truth, indexability, metrics and
 decision rule are exactly as committed.
+
+## Amendment 20 - one file missing from one checkout, declared before any case is run (2026-10-11)
+
+The runner refuses a corpus unless every repository's local checkout holds exactly the committed
+bytes at its pinned commit. That check exists because the system under test reads committed bytes,
+and an earlier attempt at this run was abandoned, before any case, when line-ending conversion on
+checkout was found to have changed the text of many chunks.
+
+On the run machine, security software that the operator does not control removes one file from the
+`astral-sh/uv` checkout every time it is checked out: `.github/workflows/setup-dev-drive.ps1`. The
+check therefore refuses that checkout, and it cannot be made to pass on this machine.
+
+The file is of a kind the system under test never indexes. That is not an assertion made here: the
+runner asks the production rule that decides which files are indexed (by extension or by exact
+file name), imported from the production code at the recorded commit, not copied. No file of that
+extension appears anywhere in the v6 index, in any of the eight repositories. The file's absence
+therefore cannot change a chunk, a candidate, or the source text any ranking stage reads.
+
+**The rule from this amendment on.** A checkout is accepted when its only difference from the
+pinned commit is one or more tracked files that are absent from the working tree and that the
+production rule says are never indexed. Every such path is written into `results.v6.json` as a
+deviation, by repository and path. Everything else is refused exactly as before: a modified file, a
+staged change, an untracked or ignored file, a file whose line endings were converted, a checkout
+off its pin, and a missing file that production would index.
+
+This is the second pre-registered rule v6 has changed. It is made before any v6 case has been run
+and before any v6 result exists. It changes which checkouts the harness will accept and nothing
+about what is measured: the sample, ground truth, indexability, metrics, decision rule and system
+under test are exactly as committed.
+
+**Also recorded here, because it is true of this run.** The offline index was chunked and embedded
+on 2026-10-09 and 2026-10-11, at production commits earlier than the one the run will record. The
+only change to the production indexing code between those commits and the run commit adds a second
+output read from the same parse; the chunks it produces are unchanged. Before the run, every
+repository is chunked again with the code at the run commit and compared with the chunks the index
+was built from. If any chunk differs, the index is rebuilt from the new chunks before any case is
+run, and that is recorded in a further amendment.
