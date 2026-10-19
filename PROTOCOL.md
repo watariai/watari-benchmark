@@ -1860,3 +1860,73 @@ second pass; Java gets one name, for its round-two place.
    If fewer than 10 repositories qualify, v7 runs with the number that did and says so.
 5. Neither the defect-label rule, the 15-case threshold, the 10-repository target, the
    100-candidate ceiling nor the 2026-07-01 cutoff is changed.
+
+## Amendment 23 - the second pass, observed, and the selection it yields (2026-10-19)
+
+The second pass Amendment 22 declared, probed once with Amendment 21's command and parameters
+unchanged (only `PROOF_POOL_JSON` differs: it holds the Amendment 22 names). No issue title, body,
+patch, ground truth or result was read by anyone. `sample.v7.frozen.json` does not exist.
+
+**TypeScript**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `jupyterlab/jupyterlab` | TypeScript | BSD-3-Clause | 45 candidates, **29 qualifying** |
+| `Kong/insomnia` | TypeScript | Apache-2.0 | 16 candidates, 7 qualifying |
+| `signalapp/Signal-Desktop` | TypeScript | AGPL-3.0 | 8 candidates, 0 qualifying |
+| `mermaid-js/mermaid` | TypeScript | MIT | no defect label in the taxonomy |
+
+**C#**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `OpenRA/OpenRA` | C# | GPL-3.0 | 23 candidates, 13 qualifying |
+| `Flow-Launcher/Flow.Launcher` | C# | MIT | 49 candidates, 13 qualifying |
+| `DevToys-app/DevToys` | C# | MIT | 1 candidates, 0 qualifying |
+| `Jackett/Jackett` | C# | GPL-2.0 | no defect label in the taxonomy |
+
+**Java**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `traccar/traccar` | Java | Apache-2.0 | no defect label in the taxonomy |
+
+**PHP**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `kimai/kimai` | PHP | AGPL-3.0 | 18 candidates, 7 qualifying |
+| `pixelfed/pixelfed` | PHP | AGPL-3.0 | 100 candidates (at the ceiling), 2 qualifying |
+| `koel/koel` | PHP | MIT | defect label `[Type] Bug`; 0 candidates |
+| `magento/magento2` | PHP | OSL-3.0 | no defect label in the taxonomy |
+
+**Ruby**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `decidim/decidim` | Ruby | AGPL-3.0 | no defect label in the taxonomy |
+| `spree/spree` | Ruby | BSD-3-Clause | defect label `Bug`; 0 candidates |
+| `openfoodfoundation/openfoodnetwork` | Ruby | AGPL-3.0 | no defect label in the taxonomy |
+
+**Rust**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `LemmyNet/lemmy` | Rust | AGPL-3.0 | 12 candidates, 1 qualifying |
+| `starship/starship` | Rust | ISC | 18 candidates, 6 qualifying |
+| `atuinsh/atuin` | Rust | MIT | 91 candidates, **21 qualifying** |
+| `lapce/lapce` | Rust | Apache-2.0 | 3 candidates, 0 qualifying |
+
+**The selection the rule yields from the combined pool** (Amendment 21's entries in their places,
+Amendment 22's appended), applied exactly as written:
+
+| round | TypeScript | Python | Go | C# | Java | PHP | Ruby | Rust |
+|---|---|---|---|---|---|---|---|---|
+| one | `jupyterlab/jupyterlab` | `streamlit/streamlit` | `gohugoio/hugo` | none | `OpenRefine/OpenRefine` | none | none | `atuinsh/atuin` |
+| two | none | `gradio-app/gradio` | `grafana/k6` | none | none | none | none | none |
+
+**Seven repositories and 105 cases in five languages**, under the cap of 10. C#, PHP and Ruby
+qualify no repository and are dropped, as Amendment 22 rule 4 fixed: no further pass is made, and
+the freeze follows this amendment directly. v7 is smaller than its 150-case target and smaller than
+v6's 120, and says so. Its interval will be correspondingly wider, and the decision rule applies to
+it unchanged.
