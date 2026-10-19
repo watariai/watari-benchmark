@@ -1554,3 +1554,162 @@ output read from the same parse; the chunks it produces are unchanged. Before th
 repository is chunked again with the code at the run commit and compared with the chunks the index
 was built from. If any chunk differs, the index is rebuilt from the new chunks before any case is
 run, and that is recorded in a further amendment.
+
+# Protocol version 7 (2026-10-19, declared before any v7 repository is probed, any case is selected, or any case is run)
+
+Versions 1 to 6 stay published exactly as they are. Nothing here restates, revises or withdraws them.
+
+## Why v7 exists
+
+v6 (run 2026-10-11) is the standing out-of-sample claim: File Match @1 of **67 of 107 = 62.6%**, 95%
+Wilson interval **53.2% to 71.2%**, with a pessimistic bound of 67 of 120 = 55.8%. Two things have
+happened since, and either one alone would be reason enough for a new sample:
+
+1. **The production system has changed.** A further stage shipped to production on 2026-10-14,
+   after v6 ran. v6 measured the system as it was on its run date, which is no longer the system a
+   customer's ticket goes through.
+2. **v6's cases are no longer out of sample.** They have since been read in miss analysis, and the
+   new stage was evaluated on them while it was being built. None of them is held out any more.
+
+**Stated plainly, so it cannot be read as anything else:** an internal re-run of the v6 cases with
+the new stage, which was not pre-registered, suggested an improvement. That number is not a claim.
+It was measured on cases already read, against a stage partly shaped by reading them, which is
+exactly the situation this protocol exists to keep out of the published record. The same is true of
+the teardown runs on other public repositories: they were not pre-registered, and every repository
+they touched is excluded below. v7 exists so that any claim about the current system is made the
+pre-registered way, and v7's result stands whether or not it agrees with those internal numbers.
+
+## System under test
+
+**Production as deployed on the run date**, every stage, at production settings, as in v6. The
+configuration is not frozen by this document; it is whatever production runs on the day the cases
+run, recorded by commit SHA in `results.v7.json`.
+
+v6's three conditions on the offline harness hold unchanged: production modules imported, not
+copied; prompt bytes identical to production's; every deviation written into the artefact. v7 adds
+one stage to what the harness must run, on the same terms:
+
+- **The stage that searches the repository runs, imported from production.** Production gives that
+  stage the repository's text at the commit the index was built from. The harness gives it the same
+  files from the local clone checked out at the pin (the pin rule below), through the same imported
+  rule that decides which files are included. Reading them from a clone instead of from the code
+  host's archive is listed as a deviation.
+- **Whatever answer production would store is what is scored.** File Match @1 is scored on the
+  final stored order, after every stage, exactly as production stores it. If the stage produces no
+  answer for a case, the earlier stages' order is scored, as production would store it.
+- **Each stage's top file is recorded per case** in the local run log, so a later reader inside the
+  team can ask what each stage contributed. Per Amendment R, those per-stage figures are not
+  published; the published figure is the final order only.
+
+## Selector parameters
+
+| | v6 | v7 |
+|---|---|---|
+| sample | new, selected fresh | **new, selected fresh** |
+| repositories | 10 target (8 qualified) | **10 target** |
+| cases per repository | 15 | **15** |
+| candidates examined per repository | 100 | **100** |
+| total cases | 150 target | **150 target** |
+| out-of-sample share | 150 of 150 | **150 of 150** |
+| `merged_on_or_after` | 2026-07-01 | **2026-07-01** |
+
+Everything else is held fixed and re-derived by the same code: the maintainers' own defect-label
+rule, the 200-character body minimum, the 1-to-5-file fix ceiling, criterion 5 (the fix PR is in the
+same repository as the issue, Amendment 15), the path exclusions, the metrics, and
+`localization-score.ts`, unchanged. No selector code changes for v7; every parameter above is
+already an input.
+
+## Repositories already examined are excluded by name
+
+A repository whose issue tracker has been read is not out of sample. The selector is given every
+repository from which v1 to v6 drew cases, and every repository a teardown has run on:
+
+    calcom/cal.com, calcom/cal.diy, apache/superset, usememos/memos,
+    helix-editor/helix, navidrome/navidrome, nextcloud/server, keycloak/keycloak,
+    element-hq/element-web, paperless-ngx/paperless-ngx, go-gitea/gitea,
+    jellyfin/jellyfin, apache/dolphinscheduler, filamentphp/filament,
+    TryGhost/Ghost, langflow-ai/langflow,
+    microsoft/vscode, netbox-community/netbox, grafana/grafana, microsoft/PowerToys,
+    astral-sh/uv, backstage/backstage, mealie-recipes/mealie, woodpecker-ci/woodpecker,
+    appsmithorg/appsmith, AvaloniaUI/Avalonia, better-auth/better-auth, chainguard-dev/apko,
+    chainguard-dev/melange, chatwoot/chatwoot, coder/coder, dbeaver/dbeaver,
+    directus/directus, dolthub/dolt, frappe/erpnext, frappe/hrms, getsentry/sentry,
+    goauthentik/authentik, gruntwork-io/terragrunt, hoppscotch/hoppscotch,
+    juspay/hyperswitch, keploy/keploy, kestra-io/kestra, makeplane/plane,
+    nocodb/nocodb, open-metadata/OpenMetadata, PrefectHQ/prefect, replit/river,
+    scalar/scalar, SocketDev/socket-cli, strapi/strapi, supermemoryai/supermemory,
+    ueberdosis/tiptap, usebruno/bruno, vendurehq/vendure, VictoriaMetrics/VictoriaMetrics
+
+**A repository a teardown runs on before `sample.v7.frozen.json` is committed is excluded too**, and
+is added to this list in the feasibility amendment. After the freeze the pool is fixed, so a
+teardown run later (for example on a repository a reader posts) cannot change v7.
+
+**Probed for counts is not examined**, as in v6: a repository probed only for licence, defect label
+and qualifying count, with no issue body, patch, ground truth or result read, stays eligible.
+
+## Candidate pool, declared before any probe, in probe order per language
+
+Language order: **TypeScript, Python, Go, C#, Java, PHP, Ruby, Rust.**
+
+| language | pool, in order |
+|---|---|
+| TypeScript | `immich-app/immich`, `excalidraw/excalidraw`, `twentyhq/twenty`, `ToolJet/ToolJet`, `Budibase/budibase`, `documenso/documenso` |
+| Python | `streamlit/streamlit`, `gradio-app/gradio`, `mitmproxy/mitmproxy`, `HumanSignal/label-studio`, `getredash/redash` |
+| Go | `gohugoio/hugo`, `caddyserver/caddy`, `syncthing/syncthing`, `filebrowser/filebrowser`, `grafana/k6` |
+| C# | `files-community/Files`, `ppy/osu`, `PowerShell/PowerShell`, `Lidarr/Lidarr`, `Prowlarr/Prowlarr` |
+| Java | `OpenRefine/OpenRefine`, `JabRef/jabref`, `apache/hop` |
+| PHP | `BookStackApp/BookStack`, `FreshRSS/FreshRSS`, `firefly-iii/firefly-iii`, `grokability/snipe-it` |
+| Ruby | `mastodon/mastodon`, `diaspora/diaspora`, `lobsters/lobsters` |
+| Rust | `zed-industries/zed`, `meilisearch/meilisearch`, `alacritty/alacritty` |
+
+The repository criteria are unchanged from v1. **The names were chosen against those criteria
+without reading any issue body, patch or result.** The probe records the language GitHub reports
+for each repository beside its row. If a language's pool is exhausted, the language is dropped; any
+extension of the pool is a recorded amendment made after feasibility data only, never after outcome
+data, with every observation listed, exactly as in v6.
+
+## Feasibility probe, recorded before the freeze
+
+After this section is committed, the selector probes every pool entry for licence, defect label and
+qualifying count, and nothing else. The observations, every entry and every rejection reason, are
+committed as an amendment **before `sample.v7.frozen.json` exists**, with the selection the rule
+below yields from those counts.
+
+## Selection rule for v7, declared before it runs
+
+v6's rule, unchanged: round one takes the first repository in each language's pool order that yields
+at least 15 qualifying cases, in the language order above; round two takes the second such
+repository per language; it stops at 10 repositories; within a repository, the 15 most recently
+closed qualifying issues. **Neither the 15-case threshold nor the 10-repository target is lowered
+after the probe.** If fewer than 10 qualify and the pool is not extended under the rule above, v7
+runs with the number that qualified and says so.
+
+## Held from earlier versions
+
+Every item of v6's "Held from earlier versions" section holds for v7 word for word, with `v7` in
+place of `v6`: one workspace, verbatim title and body as input with no thresholds applied, the pin
+rule, indexability measured and committed before scoring, no case leaving the denominator for being
+unreachable, a pessimistic bound beside every headline figure, n not fixed, `results.v7.json`
+committed unedited, and the commits merged without squashing in the order: this section, the
+feasibility amendment, `sample.v7.frozen.json`, `ground-truth.v7.json`, `indexability.v7.json`,
+`results.v7.json`. **If v7 is worse than v6, v7 is the number that ships.**
+
+## What this costs, stated so it cannot be quietly skipped
+
+Ten repositories never chunked before means every vector is bought, as in v6 (v6's embeddings cost
+about $2.50). The new stage adds roughly ten cents per case at most. The run is capped at **$25** in
+total on benchmark keys, never the application's, and at **2,500 model calls**; if either cap is
+reached the run stops, and what was run is reported as a partial run in an amendment rather than
+re-run in pieces.
+
+## Decision rule, declared now so it cannot be fitted to the result
+
+**v7's File Match @1, with its interval and its pessimistic bound, replaces v6 as the headline on
+`/proof`, whichever way it moves.** v6 stays published as a version. The changelog may state the
+outcome, the new rate and v6's, each with its denominator, and nothing about what changed in the
+system between them.
+
+## Earliest run date
+
+**No v7 case is run before 2026-10-22.** The stage added since v6 has then served real traffic for at
+least a week before it is measured.
