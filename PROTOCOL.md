@@ -1930,3 +1930,20 @@ qualify no repository and are dropped, as Amendment 22 rule 4 fixed: no further 
 the freeze follows this amendment directly. v7 is smaller than its 150-case target and smaller than
 v6's 120, and says so. Its interval will be correspondingly wider, and the decision rule applies to
 it unchanged.
+
+## Amendment 24 - the earliest run date moves to 2026-10-19, declared before any case is run (2026-10-19)
+
+The v7 section set the earliest run date at 2026-10-22, so that the stage added since v6 would have
+served real traffic for a week before it was measured. **This amendment moves it to 2026-10-19.**
+On that date the stage has served production traffic for five days, since 2026-10-14.
+
+**Why, stated plainly:** the founder wants the pre-registered result published before a public
+launch post on 2026-10-20. That is a scheduling reason, not a measurement reason, and it is recorded
+as one. v6 made the same kind of change in Amendment 19.
+
+What this changes and what it does not. It is made before any v7 case has been run and before any
+v7 result exists, with nothing about any outcome known. It changes only the date. The sample, the
+ground truth, the indexability measurement, the metrics, the decision rule and the system under test
+are exactly as committed. The system under test is still production as deployed on the run date,
+recorded by commit SHA in `results.v7.json`, so a reader can see exactly which configuration was
+measured, and that it had served five days of traffic rather than seven.
