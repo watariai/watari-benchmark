@@ -1822,3 +1822,41 @@ repositories it would admit is the move this protocol exists to prevent.
 `FreshRSS/FreshRSS` is recorded with the label the unchanged rule matched, `feature - no bug`, which
 is a label meaning the opposite of a defect. It produced no candidates, so it changes no count, and
 the rule is left as it is for the same reason.
+
+## Amendment 22 - a second pass for the five languages with nothing selected, declared before it is probed (2026-10-19)
+
+Amendment 21 left v7 at 5 repositories and 75 cases in three languages. That sample would carry a
+wider interval than v6's and could not credibly stand in its place, so the pool is **extended once,
+as a second pass**, under the rule v6 used in Amendment 17: names chosen after a feasibility result
+and never after an outcome result, recorded as a second pass rather than folded into the original
+table.
+
+**What the second pass knows and what it does not.** It is written after seeing Amendment 21's
+counts, which showed that the defect label, not only the cutoff, empties most pools. The names
+below were therefore chosen for one property beyond the unchanged repository criteria: a large,
+active public issue tracker that is known to use labels. No issue title, body, patch, ground truth
+or result of any repository was read in choosing them, and none of them has been probed. None
+appears in the exclusion list. Python and Go already qualify two repositories each and get no
+second pass; Java gets one name, for its round-two place.
+
+| language | second pass, in probe order |
+|---|---|
+| TypeScript | `jupyterlab/jupyterlab`, `Kong/insomnia`, `signalapp/Signal-Desktop`, `mermaid-js/mermaid` |
+| C# | `OpenRA/OpenRA`, `Flow-Launcher/Flow.Launcher`, `DevToys-app/DevToys`, `Jackett/Jackett` |
+| Java | `traccar/traccar` |
+| PHP | `kimai/kimai`, `pixelfed/pixelfed`, `koel/koel`, `magento/magento2` |
+| Ruby | `decidim/decidim`, `spree/spree`, `openfoodfoundation/openfoodnetwork` |
+| Rust | `LemmyNet/lemmy`, `starship/starship`, `atuinsh/atuin`, `lapce/lapce` |
+
+**Rules for using it, fixed now**, as in Amendment 17:
+
+1. Each language's second-pass names are appended to the end of that language's pool order. The
+   original entries keep their places and their Amendment 21 counts.
+2. The second pass is probed once, with Amendment 21's command and parameters unchanged (only
+   `PROOF_POOL_JSON` differs), and every observation is committed as its own amendment before
+   `sample.v7.frozen.json` exists.
+3. The selection rule is then applied to the combined pool exactly as written, stopping at 10.
+4. **The freeze follows that amendment directly**, on whatever qualifies. No further pass is made.
+   If fewer than 10 repositories qualify, v7 runs with the number that did and says so.
+5. Neither the defect-label rule, the 15-case threshold, the 10-repository target, the
+   100-candidate ceiling nor the 2026-07-01 cutoff is changed.
