@@ -1713,3 +1713,112 @@ system between them.
 
 **No v7 case is run before 2026-10-22.** The stage added since v6 has then served real traffic for at
 least a week before it is measured.
+
+## Amendment 21 - v7 feasibility, observed before selection (2026-10-19)
+
+The probe the v7 section "Feasibility probe, recorded before the freeze" commits to, run on
+2026-10-19 against **every entry in the v7 pool, in declared order**, with v6's `--probe` mode
+unchanged. All 34 entries were evaluated and every observation is recorded below.
+`sample.v7.frozen.json` does not exist. No issue title, body, patch, ground truth or result was read
+by anyone, in running the probe or in recording it.
+
+    PROOF_POOL_JSON=<the v7 pool table above, in its order>
+    PROOF_EXCLUDE_REPOS=<the 56 names above>
+    PROOF_MERGED_ON_OR_AFTER=2026-07-01
+    PROOF_CANDIDATES_PER_REPO=100
+    PROOF_CASES_PER_REPO=15
+    PROOF_ROUNDS_PER_LANGUAGE=2
+    PROOF_MAX_REPOS=10
+    PROOF_TARGET_LANGUAGES=8
+    node scripts/proof/select-sample.mjs --probe
+
+The columns mean what they meant in Amendment 16. The pool table above lists 34 names, not the 40
+the v7 pull request description said; 34 is the count, and nothing was added or removed. No teardown
+ran on any repository between the v7 section's commit and this probe, so the exclusion list is
+unchanged.
+
+**TypeScript**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `immich-app/immich` | TypeScript | AGPL-3.0 | no defect label in the taxonomy |
+| `excalidraw/excalidraw` | TypeScript | MIT | 29 candidates, 0 qualifying |
+| `twentyhq/twenty` | TypeScript | `NOASSERTION` | licence `NOASSERTION` |
+| `ToolJet/ToolJet` | HTML | AGPL-3.0 | 100 candidates (at the ceiling), 0 qualifying |
+| `Budibase/budibase` | TypeScript | `NOASSERTION` | licence `NOASSERTION` |
+| `documenso/documenso` | TypeScript | AGPL-3.0 | 6 candidates, 1 qualifying |
+
+**Python**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `streamlit/streamlit` | Python | Apache-2.0 | 100 candidates (at the ceiling), **66 qualifying** |
+| `gradio-app/gradio` | Python | Apache-2.0 | 100 candidates (at the ceiling), **43 qualifying** |
+| `mitmproxy/mitmproxy` | Python | MIT | 3 candidates, 2 qualifying |
+| `HumanSignal/label-studio` | TypeScript | Apache-2.0 | defect label `community_bug`, `community:bug`; 0 candidates |
+| `getredash/redash` | Python | BSD-2-Clause | defect label `Bug`; 0 candidates |
+
+**Go**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `gohugoio/hugo` | Go | Apache-2.0 | 49 candidates, **23 qualifying** |
+| `caddyserver/caddy` | Go | Apache-2.0 | no defect label in the taxonomy |
+| `syncthing/syncthing` | Go | MPL-2.0 | 58 candidates, 3 qualifying |
+| `filebrowser/filebrowser` | Go | Apache-2.0 | archived |
+| `grafana/k6` | Go | AGPL-3.0 | 39 candidates, **16 qualifying** |
+
+**C#**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `files-community/Files` | C# | MIT | no defect label in the taxonomy |
+| `ppy/osu` | C# | MIT | no defect label in the taxonomy |
+| `PowerShell/PowerShell` | C# | MIT | 14 candidates, 7 qualifying |
+| `Lidarr/Lidarr` | C# | GPL-3.0 | 6 candidates, 3 qualifying |
+| `Prowlarr/Prowlarr` | C# | GPL-3.0 | 18 candidates, 4 qualifying |
+
+**Java**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `OpenRefine/OpenRefine` | Java | BSD-3-Clause | 21 candidates, **15 qualifying** |
+| `JabRef/jabref` | Java | MIT | defect label `[outdated] type: bug`; 0 candidates |
+| `apache/hop` | Java | Apache-2.0 | 31 candidates, 12 qualifying |
+
+**PHP**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `BookStackApp/BookStack` | PHP | MIT | defect label `:bug: Bug`; 0 candidates |
+| `FreshRSS/FreshRSS` | PHP | AGPL-3.0 | defect label `feature - no bug`; 0 candidates |
+| `firefly-iii/firefly-iii` | PHP | AGPL-3.0 | no defect label in the taxonomy |
+| `grokability/snipe-it` | PHP | AGPL-3.0 | 35 candidates, 0 qualifying |
+
+**Ruby**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `mastodon/mastodon` | Ruby | AGPL-3.0 | 1 candidates, 0 qualifying |
+| `diaspora/diaspora` | Ruby | AGPL-3.0 | defect label `🐞 bug`; 0 candidates |
+| `lobsters/lobsters` | Ruby | `NOASSERTION` | licence `NOASSERTION` |
+
+**Rust**
+
+| repository | GitHub reports | licence | observed |
+|---|---|---|---|
+| `zed-industries/zed` | Rust | `NOASSERTION` | licence `NOASSERTION` |
+| `meilisearch/meilisearch` | Rust | `NOASSERTION` | licence `NOASSERTION` |
+| `alacritty/alacritty` | Rust | Apache-2.0 | 3 candidates, 1 qualifying |
+
+**What the counts say.** Five repositories qualify: `streamlit/streamlit` and `gradio-app/gradio`
+(Python), `gohugoio/hugo` and `grafana/k6` (Go), and `OpenRefine/OpenRefine` (Java). Applied to this
+pool alone, the selection rule yields those five and 75 cases in three languages. Seven entries
+reject at the repository level for having no defect label at all, which in several cases is a
+project that classifies issues with GitHub's issue type instead of a label. The defect-label rule is
+not changed for that: it is the rule every version has used, and changing it after seeing which
+repositories it would admit is the move this protocol exists to prevent.
+
+`FreshRSS/FreshRSS` is recorded with the label the unchanged rule matched, `feature - no bug`, which
+is a label meaning the opposite of a defect. It produced no candidates, so it changes no count, and
+the rule is left as it is for the same reason.
