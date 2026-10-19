@@ -1,0 +1,1619 @@
+{
+  "measured_at": "2026-10-19T09:51:51.790Z",
+  "ground_truth": "benchmarks/localization/ground-truth.v7.json",
+  "summary": {
+    "cases": 105,
+    "reachable": 98,
+    "unreachable": 7
+  },
+  "unreachable_cases": [
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19731,
+      "ground_truth_files": [
+        ".github/workflows/linuxjs-tests.yml"
+      ]
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 8011,
+      "ground_truth_files": [
+        ".github/workflows/pull_request_e2e.yml",
+        ".github/workflows/snapshot_release.yml"
+      ]
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7303,
+      "ground_truth_files": [
+        ".github/workflows/pull_request_server.yml"
+      ]
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4374,
+      "ground_truth_files": [
+        "crates/atuin-common/src/secrets.rs",
+        "crates/atuin-common/src/secrets/vendors.rs"
+      ]
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 2816,
+      "ground_truth_files": [
+        "systemd/atuin-server.service"
+      ]
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13848,
+      "ground_truth_files": [
+        ".github/actions/install-all-deps/action.yml"
+      ]
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6202,
+      "ground_truth_files": [
+        ".github/workflows/xk6.yml"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 20027,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/csvviewer-extension/src/searchprovider.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/csvviewer/src/widget.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 18623,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/galata-update-v2.yml",
+          "chunked": false
+        },
+        {
+          "file_path": "scripts/unpack_snapshots.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19964,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/console/src/panel.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19942,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/application/src/utils.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 16164,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/codemirror-extension/src/services.tsx",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/codemirror/package.json",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/codemirror/src/commands.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/codemirror/src/extensions/commandRegistry.ts",
+          "chunked": false
+        },
+        {
+          "file_path": "packages/codemirror/src/extensions/index.ts",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 18462,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/notebook/src/searchprovider.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19731,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/linuxjs-tests.yml",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 18109,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/services/package.json",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/services/src/builder/index.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/services/src/manager.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/services/tsconfig.json",
+          "chunked": false
+        },
+        {
+          "file_path": "packages/translation-extension/src/index.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19721,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/coreutils/src/lru.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/rendermime/src/registry.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "packages/rendermime/src/renderers.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19611,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/application/src/dockpanel.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 17303,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/notebook/src/panel.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19675,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/notebook-extension/src/index.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19608,
+      "ground_truth_files": [
+        {
+          "file_path": "jupyterlab/extensions/pypi.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 19722,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/services/examples/browser/src/comm.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "jupyterlab/jupyterlab",
+      "issue_number": 17955,
+      "ground_truth_files": [
+        {
+          "file_path": "packages/completer/src/default/inlinehistoryprovider.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "pyproject.toml",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17494,
+      "ground_truth_files": [
+        {
+          "file_path": "e2e_playwright/st_slider.py",
+          "chunked": true
+        },
+        {
+          "file_path": "e2e_playwright/st_slider_test.py",
+          "chunked": true
+        },
+        {
+          "file_path": "frontend/lib/src/components/widgets/Slider/Slider.tsx",
+          "chunked": true
+        },
+        {
+          "file_path": "frontend/lib/src/components/widgets/Slider/sliderStep.ts",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17402,
+      "ground_truth_files": [
+        {
+          "file_path": "frontend/lib/src/util/utils.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "frontend/utils/src/browser/index.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17216,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/streamlit/components/v2/__init__.py",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/streamlit/components/v2/component_manager.py",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/streamlit/components/v2/component_registry.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17298,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/streamlit/__init__.py",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/streamlit/command_suggestions.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17309,
+      "ground_truth_files": [
+        {
+          "file_path": "e2e_playwright/st_pydeck_chart.py",
+          "chunked": true
+        },
+        {
+          "file_path": "e2e_playwright/st_pydeck_chart_test.py",
+          "chunked": true
+        },
+        {
+          "file_path": "frontend/lib/src/components/elements/DeckGlJsonChart/styled-components.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17249,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/streamlit/testing/v1/app_test.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17195,
+      "ground_truth_files": [
+        {
+          "file_path": "e2e_playwright/st_dataframe_selections_test.py",
+          "chunked": true
+        },
+        {
+          "file_path": "frontend/lib/src/components/widgets/DataFrame/DataFrame.tsx",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17093,
+      "ground_truth_files": [
+        {
+          "file_path": "e2e_playwright/widget_state.py",
+          "chunked": true
+        },
+        {
+          "file_path": "e2e_playwright/widget_state_test.py",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/streamlit/runtime/state/session_state.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17107,
+      "ground_truth_files": [
+        {
+          "file_path": "frontend/lib/src/components/elements/Dialog/Dialog.tsx",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17082,
+      "ground_truth_files": [
+        {
+          "file_path": "frontend/app/src/components/GlobalHotkeys/GlobalHotkeys.tsx",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 14782,
+      "ground_truth_files": [
+        {
+          "file_path": "frontend/lib/src/components/widgets/DataFrame/columns/LinkColumn.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17011,
+      "ground_truth_files": [
+        {
+          "file_path": "e2e_playwright/st_dialog.py",
+          "chunked": true
+        },
+        {
+          "file_path": "e2e_playwright/st_dialog_test.py",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/streamlit/elements/dialog_decorator.py",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/streamlit/runtime/fragment.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 2975,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/streamlit/runtime/scriptrunner/script_runner.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 17029,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/streamlit/elements/metric.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "streamlit/streamlit",
+      "issue_number": 16909,
+      "ground_truth_files": [
+        {
+          "file_path": "Makefile",
+          "chunked": false
+        },
+        {
+          "file_path": "e2e_playwright/st_data_editor_editing_test.py",
+          "chunked": true
+        },
+        {
+          "file_path": "frontend/.yarn/patches/@glideapps-glide-data-grid-npm-6.0.4-alpha24-9c1a40557b.patch",
+          "chunked": false
+        },
+        {
+          "file_path": "scripts/append_missing_dependency_license.mjs",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15449,
+      "ground_truth_files": [
+        {
+          "file_path": "hugolib/site_render.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15444,
+      "ground_truth_files": [
+        {
+          "file_path": "docs/data/docs.yaml",
+          "chunked": false
+        },
+        {
+          "file_path": "tpl/cast/docshelper.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 12838,
+      "ground_truth_files": [
+        {
+          "file_path": "hugolib/hugo_sites_build.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15403,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/test.yml",
+          "chunked": false
+        },
+        {
+          "file_path": "htesting/test_helpers.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15389,
+      "ground_truth_files": [
+        {
+          "file_path": "tpl/tplimpl/templatestore.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 14044,
+      "ground_truth_files": [
+        {
+          "file_path": "resources/page/page_markup.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15322,
+      "ground_truth_files": [
+        {
+          "file_path": "common/hreflect/compare.go",
+          "chunked": false
+        },
+        {
+          "file_path": "common/hreflect/convert.go",
+          "chunked": true
+        },
+        {
+          "file_path": "tpl/collections/reflect_helpers.go",
+          "chunked": true
+        },
+        {
+          "file_path": "tpl/collections/where.go",
+          "chunked": true
+        },
+        {
+          "file_path": "tpl/compare/compare.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15330,
+      "ground_truth_files": [
+        {
+          "file_path": "hugolib/pages_capture.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15253,
+      "ground_truth_files": [
+        {
+          "file_path": "config/allconfig/allconfig.go",
+          "chunked": true
+        },
+        {
+          "file_path": "config/allconfig/load.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15234,
+      "ground_truth_files": [
+        {
+          "file_path": "tpl/tplimpl/templatetransform.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15245,
+      "ground_truth_files": [
+        {
+          "file_path": "modules/npm/package_builder.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15237,
+      "ground_truth_files": [
+        {
+          "file_path": "common/hstore/scratch.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15223,
+      "ground_truth_files": [
+        {
+          "file_path": "commands/config.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15207,
+      "ground_truth_files": [
+        {
+          "file_path": "hugolib/content_map_page_contentnodeshifter.go",
+          "chunked": true
+        },
+        {
+          "file_path": "hugolib/doctree/nodeshifttree.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gohugoio/hugo",
+      "issue_number": 15206,
+      "ground_truth_files": [
+        {
+          "file_path": "hugolib/page__content.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7704,
+      "ground_truth_files": [
+        {
+          "file_path": "main/src/com/google/refine/exporters/CsvExporter.java",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 4926,
+      "ground_truth_files": [
+        {
+          "file_path": "main/src/com/google/refine/commands/browsing/GetScatterplotCommand.java",
+          "chunked": true
+        },
+        {
+          "file_path": "modules/core/src/main/java/com/google/refine/browsing/facets/ScatterplotDrawingRowVisitor.java",
+          "chunked": true
+        },
+        {
+          "file_path": "modules/core/src/main/java/com/google/refine/browsing/facets/ScatterplotFacet.java",
+          "chunked": true
+        },
+        {
+          "file_path": "pom.xml",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 8011,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/pull_request_e2e.yml",
+          "chunked": false
+        },
+        {
+          "file_path": ".github/workflows/snapshot_release.yml",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7571,
+      "ground_truth_files": [
+        {
+          "file_path": "main/webapp/modules/core/scripts/views/data-table/text-transform-dialog.html",
+          "chunked": true
+        },
+        {
+          "file_path": "main/webapp/modules/core/styles/dialogs/expression-preview-dialog.css",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7894,
+      "ground_truth_files": [
+        {
+          "file_path": "packaging/pom.xml",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7141,
+      "ground_truth_files": [
+        {
+          "file_path": "main/webapp/modules/core/scripts/facets/list-facet.js",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7892,
+      "ground_truth_files": [
+        {
+          "file_path": "extensions/wikibase/src/org/openrefine/wikibase/qa/scrutinizers/ItemRequiresScrutinizer.java",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7831,
+      "ground_truth_files": [
+        {
+          "file_path": "extensions/wikibase/src/org/openrefine/wikibase/schema/strategies/LaxValueMatcher.java",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7859,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/pull_request_e2e.yml",
+          "chunked": false
+        },
+        {
+          "file_path": ".github/workflows/snapshot_release.yml",
+          "chunked": false
+        },
+        {
+          "file_path": "main/webapp/package.json",
+          "chunked": true
+        },
+        {
+          "file_path": "refine",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7902,
+      "ground_truth_files": [
+        {
+          "file_path": "server/src/com/google/util/logging/IndentingLayout.java",
+          "chunked": true
+        },
+        {
+          "file_path": "server/src/log4j2.properties",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7872,
+      "ground_truth_files": [
+        {
+          "file_path": "extensions/wikibase/src/org/openrefine/wikibase/exporters/SchemaExporter.java",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7303,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/pull_request_server.yml",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 7808,
+      "ground_truth_files": [
+        {
+          "file_path": "extensions/wikibase/src/org/openrefine/wikibase/qa/scrutinizers/FileNameScrutinizer.java",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 6745,
+      "ground_truth_files": [
+        {
+          "file_path": "main/pom.xml",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "issue_number": 3012,
+      "ground_truth_files": [
+        {
+          "file_path": "extensions/jython/src/com/google/refine/jython/JythonEvaluable.java",
+          "chunked": true
+        },
+        {
+          "file_path": "main/src/com/google/refine/commands/expr/PreviewExpressionCommand.java",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4374,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-common/src/secrets.rs",
+          "chunked": false
+        },
+        {
+          "file_path": "crates/atuin-common/src/secrets/vendors.rs",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 784,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-client/src/api_client.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-client/src/record/sync/builder.rs",
+          "chunked": false
+        },
+        {
+          "file_path": "crates/atuin-client/src/record/sync/mod.rs",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 2816,
+      "ground_truth_files": [
+        {
+          "file_path": "systemd/atuin-server.service",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4263,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-pty-proxy/src/pty_proxy.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-pty-proxy/src/runtime.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4225,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin/src/command/client/daemon.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4220,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-pty-proxy/Cargo.toml",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-pty-proxy/src/pty_proxy.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4149,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin/src/shell/atuin.bash",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin/src/shell/atuin.zsh",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 2512,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-history/src/stats.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin/src/command/client/wrapped.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 4063,
+      "ground_truth_files": [
+        {
+          "file_path": "Cargo.toml",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-server/src/router.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-server/src/trace.rs",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 3758,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin/src/shell/atuin.zsh",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 2884,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-server/Cargo.toml",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin/Cargo.toml",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 3603,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-client/src/database.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-client/src/ordering.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 3761,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/rust.yml",
+          "chunked": false
+        },
+        {
+          "file_path": "crates/atuin/Cargo.toml",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin/src/shell.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 3471,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-client/src/record/encryption.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "atuinsh/atuin",
+      "issue_number": 3695,
+      "ground_truth_files": [
+        {
+          "file_path": "crates/atuin-pty-proxy/src/pty_proxy.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin-pty-proxy/src/runtime.rs",
+          "chunked": true
+        },
+        {
+          "file_path": "crates/atuin/src/command/mod.rs",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13881,
+      "ground_truth_files": [
+        {
+          "file_path": "demo/accordion_tab_switch/run.py",
+          "chunked": true
+        },
+        {
+          "file_path": "js/accordion/Index.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/core/src/dependency.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "js/core/src/init.svelte.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "js/tabs/Index.svelte",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13839,
+      "ground_truth_files": [
+        {
+          "file_path": "js/workflowcanvas/workflow/WorkflowCanvas.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/workflowcanvas/workflow/WorkflowNodeSF.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/workflowcanvas/workflow/workflow-executor.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "js/workflowcanvas/workflow/workflow-graph.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13943,
+      "ground_truth_files": [
+        {
+          "file_path": "js/markdown-code/MarkdownCode.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/markdown-code/utils.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13939,
+      "ground_truth_files": [
+        {
+          "file_path": "js/markdown-code/MarkdownCode.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/markdown-code/utils.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13929,
+      "ground_truth_files": [
+        {
+          "file_path": "js/file/shared/FileUpload.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/gallery/Index.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/gallery/shared/Gallery.svelte",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13897,
+      "ground_truth_files": [
+        {
+          "file_path": "js/audio/interactive/InteractiveAudio.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/audio/streaming/StreamAudio.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/core/src/lang/en.json",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13923,
+      "ground_truth_files": [
+        {
+          "file_path": "gradio/processing_utils.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13900,
+      "ground_truth_files": [
+        {
+          "file_path": "client/js/src/utils/submit.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "js/audio/interactive/InteractiveAudio.svelte",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13898,
+      "ground_truth_files": [
+        {
+          "file_path": "js/audio/shared/audioBufferToWav.ts",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13856,
+      "ground_truth_files": [
+        {
+          "file_path": "gradio/components/audio.py",
+          "chunked": true
+        },
+        {
+          "file_path": "gradio/processing_utils.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13869,
+      "ground_truth_files": [
+        {
+          "file_path": "js/core/src/dependency.ts",
+          "chunked": true
+        },
+        {
+          "file_path": "js/statustracker/static/LiveStatus.svelte",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13855,
+      "ground_truth_files": [
+        {
+          "file_path": "gradio/block_function.py",
+          "chunked": true
+        },
+        {
+          "file_path": "gradio/blocks.py",
+          "chunked": true
+        },
+        {
+          "file_path": "gradio/queueing.py",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13818,
+      "ground_truth_files": [
+        {
+          "file_path": "js/core/src/AsyncChildrenRuntime.fixture.html",
+          "chunked": false
+        },
+        {
+          "file_path": "js/core/src/AsyncChildrenRuntime.fixture.ts",
+          "chunked": false
+        },
+        {
+          "file_path": "js/core/src/MountChildren.svelte",
+          "chunked": false
+        },
+        {
+          "file_path": "js/core/src/MountCustomComponent.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/preview/src/svelte_runtime_entry.js",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13131,
+      "ground_truth_files": [
+        {
+          "file_path": "js/core/src/AsyncChildrenRuntime.fixture.html",
+          "chunked": false
+        },
+        {
+          "file_path": "js/core/src/AsyncChildrenRuntime.fixture.ts",
+          "chunked": false
+        },
+        {
+          "file_path": "js/core/src/MountChildren.svelte",
+          "chunked": false
+        },
+        {
+          "file_path": "js/core/src/MountCustomComponent.svelte",
+          "chunked": true
+        },
+        {
+          "file_path": "js/preview/src/svelte_runtime_entry.js",
+          "chunked": false
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "gradio-app/gradio",
+      "issue_number": 13848,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/actions/install-all-deps/action.yml",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6150,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/output/prometheusrw/remotewrite/config.go",
+          "chunked": true
+        },
+        {
+          "file_path": "internal/output/prometheusrw/sigv4/const.go",
+          "chunked": true
+        },
+        {
+          "file_path": "internal/output/prometheusrw/sigv4/sigv4.go",
+          "chunked": true
+        },
+        {
+          "file_path": "internal/output/prometheusrw/sigv4/tripper.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 2951,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/executor/ramping_arrival_rate.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 5012,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/js/modules/k6/browser/common/http.go",
+          "chunked": true
+        },
+        {
+          "file_path": "internal/js/modules/k6/browser/common/network_manager.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6353,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/js/modules/k6/websockets/websockets.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 3842,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/js/eventloop/eventloop.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 800,
+      "ground_truth_files": [
+        {
+          "file_path": "go.mod",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/netext/httpext/digest.go",
+          "chunked": false
+        },
+        {
+          "file_path": "lib/netext/httpext/digest_transport.go",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/netext/httpext/request.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6320,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/js/modules/k6/webcrypto/crypto.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 5328,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/js/modules/k6/browser/common/browser.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6317,
+      "ground_truth_files": [
+        {
+          "file_path": "lib/netext/httpext/tracer.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6354,
+      "ground_truth_files": [
+        {
+          "file_path": "go.mod",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/netext/httpext/digest.go",
+          "chunked": false
+        },
+        {
+          "file_path": "lib/netext/httpext/digest_transport.go",
+          "chunked": true
+        },
+        {
+          "file_path": "lib/netext/httpext/request.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 425,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/output/influxdb/config.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 1185,
+      "ground_truth_files": [
+        {
+          "file_path": "js/modules/k6/http/request.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 4657,
+      "ground_truth_files": [
+        {
+          "file_path": "internal/log/file.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6181,
+      "ground_truth_files": [
+        {
+          "file_path": "metrics/sink.go",
+          "chunked": true
+        }
+      ],
+      "reachable": true
+    },
+    {
+      "repo": "grafana/k6",
+      "issue_number": 6202,
+      "ground_truth_files": [
+        {
+          "file_path": ".github/workflows/xk6.yml",
+          "chunked": false
+        }
+      ],
+      "reachable": false
+    }
+  ]
+}
