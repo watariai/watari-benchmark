@@ -1947,3 +1947,12 @@ ground truth, the indexability measurement, the metrics, the decision rule and t
 are exactly as committed. The system under test is still production as deployed on the run date,
 recorded by commit SHA in `results.v7.json`, so a reader can see exactly which configuration was
 measured, and that it had served five days of traffic rather than seven.
+
+### Note added after the run (2026-10-21): the launch date moved
+
+This note is not an amendment. It changes nothing in the protocol or the results, and it is added
+because the reason Amendment 24 gives is no longer true. The public launch post that the run was
+brought forward for did not happen on 2026-10-20. It moved to 2026-11-10, so that the founder can be
+present for it. The v7 run still took place on 2026-10-19, under the protocol as amended before it
+started, and `results.v7.json` is unchanged. Recorded so that the history shows the changed reason
+next to the change it justified.
